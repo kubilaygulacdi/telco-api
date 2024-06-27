@@ -11,10 +11,6 @@ model = joblib.load("pipeline_with_lgbm.pkl")
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return "hello world"
-
 @app.route("/predict", methods=["POST"])
 def predict():
         gender = request.form.get("gender")
